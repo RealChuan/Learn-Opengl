@@ -1,5 +1,8 @@
 # Learn-Opengl
 
+- [简体中文](README.md)
+- [English](README.en.md)
+
 ## 基于[LearnOpengl-CN](https://learnopengl-cn.github.io/)写的一些例子
 
 1. [hello window](./hello_window/main.cc)----------创建一个窗口；
