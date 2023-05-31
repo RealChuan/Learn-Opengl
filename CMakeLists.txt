@@ -82,3 +82,4 @@ if(Stb_FOUND)
 endif()
 
 add_subdirectory(hellowindow)
+add_subdirectory(triangle)
