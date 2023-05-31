@@ -83,3 +83,4 @@ endif()
 
 add_subdirectory(hellowindow)
 add_subdirectory(triangle)
+add_subdirectory(rectangle)
