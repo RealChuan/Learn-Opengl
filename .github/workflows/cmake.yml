@@ -6,13 +6,13 @@ on:
         - '.clang-format'
         - 'LICENSE'
         - '.gitignore'
-        - 'README.md'
+        - 'README*'
   pull_request:
     paths-ignore: # 下列文件的变更不触发部署，可以自行添加
         - '.clang-format'
         - 'LICENSE'
         - '.gitignore'
-        - 'README.md'
+        - 'README*'
 
 jobs:
   build:
