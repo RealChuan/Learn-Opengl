@@ -15,4 +15,6 @@
 8. [transform](./transform/main.cc)----------变换；
 9. [coordinate](./coordinate/main.cc)----------坐标系；
 10. [camera](./camera/main.cc)----------相机；
-
+11. [color](./color/main.cc)----------颜色；
+12. [light](./light/main.cc)----------基础光照；
+13. [material](./material/main.cc)----------材质；
