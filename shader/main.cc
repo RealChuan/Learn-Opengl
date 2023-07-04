@@ -11,7 +11,7 @@ void processInput(GLFWwindow *window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
-int main()
+auto main() -> int
 {
     // glfw: initialize and configure
     // ------------------------------
@@ -26,8 +26,8 @@ int main()
 
     // glfw window creation
     // --------------------
-    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
-    if (window == NULL) {
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", nullptr, nullptr);
+    if (window == nullptr) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
@@ -37,7 +37,7 @@ int main()
 
     // glad: load all OpenGL function pointers
     // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
+    if (gladLoadGLLoader((GLADloadproc) glfwGetProcAddress) == 0) {
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
@@ -51,24 +51,24 @@ int main()
     // ------------------------------------------------------------------
     float vertices[] = {
         // positions         // colors
-        0.5f,
-        -0.5f,
-        0.0f,
-        1.0f,
-        0.0f,
-        0.0f, // bottom right
-        -0.5f,
-        -0.5f,
-        0.0f,
-        0.0f,
-        1.0f,
-        0.0f, // bottom left
-        0.0f,
-        0.5f,
-        0.0f,
-        0.0f,
-        0.0f,
-        1.0f // top
+        0.5F,
+        -0.5F,
+        0.0F,
+        1.0F,
+        0.0F,
+        0.0F, // bottom right
+        -0.5F,
+        -0.5F,
+        0.0F,
+        0.0F,
+        1.0F,
+        0.0F, // bottom left
+        0.0F,
+        0.5F,
+        0.0F,
+        0.0F,
+        0.0F,
+        1.0F // top
     };
 
     unsigned int VBO, VAO;
@@ -81,7 +81,7 @@ int main()
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *) 0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *) nullptr);
     glEnableVertexAttribArray(0);
     // color attribute
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *) (3 * sizeof(float)));
@@ -93,14 +93,14 @@ int main()
 
     // render loop
     // -----------
-    while (!glfwWindowShouldClose(window)) {
+    while (glfwWindowShouldClose(window) == 0) {
         // input
         // -----
         processInput(window);
 
         // render
         // ------
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.2F, 0.3F, 0.3F, 1.0F);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // render the triangle
@@ -129,8 +129,9 @@ int main()
 // ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window)
 {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, 1);
+    }
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
