@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "learn-opengl",
+  "version": "0.1.1",
+  "description": "manifest",
+  "dependencies": [
+    "glm",
+    "glfw3",
+    "stb",
+    {
+      "name": "glad",
+      "features": [
+        "extensions"
+      ]
+    }
+  ],
+  "builtin-baseline": "dee924de74e81388140a53c32a919ecec57d20ab"
+}
